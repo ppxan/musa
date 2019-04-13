@@ -2,7 +2,7 @@ language: node_js
 node_js:
 - 10.15.0
 addons:
-  ssh_known_hosts: 47.99.143.70
+  ssh_known_hosts: 118.24.24.60
 before_install:
 - openssl aes-256-cbc -K $encrypted_f15dd9e9fbee_key -iv $encrypted_f15dd9e9fbee_iv
   -in deploy_rsa.enc -out deploy_rsa -d
@@ -11,9 +11,5 @@ install:
 - yarn install
 script:
 - yarn build:h5
-deploy:
-  provider: script
-  script: bash ./deploy.sh
-  skip_cleanup: true
-  on:
-    branch: master
+after_success:
+- rsync -rv --delete -e 'ssh -o stricthostkeychecking=no -p 1022' dist/build/h5 ubuntu@118.24.24.60:/usr/local/musa
