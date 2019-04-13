@@ -15,7 +15,8 @@ install:
 script:
 - yarn build:h5
 after_success:
-- rsync -rv --delete -e 'ssh -o stricthostkeychecking=no' dist/build/h5 ubuntu@118.24.24.60:/usr/local/musa
+- export SSHPASS=$DEPLOY_PASS
+- sshpass rsync -avr dist/build/h5 ubuntu@118.24.24.60:/usr/local/musa
 env:
   global:
   - secure: "Fl0NC4HqqjXtQbIRyLmshqNRi83C5QPXk2GcilTK5le6Nf/LNZuo6XhtSxhRAhAnLj4mNdpfx4PvTYP/OtOzcm+FqXVPEDAhBKj18GijH2CtCp1aL+FKq+YjyWM5ErQNeLDsNNqKe/lLkiZIRkoHAaWS0tZx3pWbK9dJ3UGxrdLQfG1dJoUcnar9TJcTPkZmzxcp3rhbIaPPpaPbm9imnep3QgBAquKXk0K07kk7Ezo2uyz39SnzIy6O46OWT8CsEF43JgqOc8b+hZhqVIRAIVR37h3C3nP8TsZX84kPHI2vsJAVJWkIJx5LBfY9LRyCb7MhsjaGlSBVoxIntAbQI8TiuwtD4icGRPxSKgbLN55oqaMVzQw1a2Q/BjAOi2wX+89lJCXGsgInt1/Ase1LgVTUUoGgkYzxl+qAxOAKMKERDCbJ2o8fF9GLhxYekabnrq7Sc5C0rrQ/9WB6MRusN+iGG/2BojBj9Y+NcTQsL/DG2976Dbk0NgZpfEY/M0b5c3GfOk1kNNiGA59MbBXgPGw/e58/ksBpNcwbOzQAI83kzun/WmypZLRmVuc6EC6ikanxzJxkwo72V8vaeuES2WiFgbVCFuH9s+75YuJeBPoJzpzcbAcmpZkAz1UC6UNolyegYbgLm0L+6swDUFa/1Q2z1liJEz0Thm2wfMcbrFI="
