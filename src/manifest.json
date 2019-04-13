@@ -6,7 +6,7 @@
     "versionCode" : "100",
     "transformPx" : false,
     "app-plus" : {
-        "usingComponents": true,
+        "usingComponents" : true,
         /* 5+App特有相关 */
         "modules" : {},
         /* 模块配置 */
@@ -54,11 +54,11 @@
         "setting" : {
             "urlCheck" : false
         },
-        "usingComponents": true
+        "usingComponents" : true
     },
     "h5" : {
         "router" : {
-            "base" : "/demo/news/website/"
+            "base" : "/"
         },
         "template" : "h5.template.html"
     }
