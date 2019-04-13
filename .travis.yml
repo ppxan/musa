@@ -3,6 +3,9 @@ node_js:
 - 10.15.0
 addons:
   ssh_known_hosts: 118.24.24.60
+  apt:
+    packages:
+    - sshpass
 install:
 - yarn install
 script:
