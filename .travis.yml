@@ -12,4 +12,4 @@ install:
 script:
 - yarn build:h5
 after_success:
-- rsync -rv --delete -e 'ssh -o stricthostkeychecking=no -p 1022' dist/build/h5 ubuntu@118.24.24.60:/usr/local/musa
+- rsync -rv --delete -e 'ssh -o stricthostkeychecking=no' dist/build/h5 ubuntu@118.24.24.60:/usr/local/musa
