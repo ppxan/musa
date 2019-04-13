@@ -60,6 +60,7 @@
         "router" : {
             "base" : "/"
         },
-        "template" : "h5.template.html"
+        "template" : "h5.template.html",
+        "title" : "Musa"
     }
 }
